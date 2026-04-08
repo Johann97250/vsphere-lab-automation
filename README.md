@@ -31,7 +31,9 @@ L'infrastructure est segmentée en plusieurs couches automatisées :
 ├── docs/               # Schémas réseaux et diagrammes d'architecture
 └── README.md
 ```
-##De façon plus détaillée
+---
+De façon plus détaillée
+---
 ```text
 .
 ├── ansible
