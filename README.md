@@ -30,7 +30,7 @@ L'infrastructure est segmentée en plusieurs couches automatisées :
 ├── scripts/            # Scripts PowerCLI pour la migration (Vmotion/Replica)
 ├── docs/               # Schémas réseaux et diagrammes d'architecture
 └── README.md
-
+```
 ---
 
 ## 🛠️ Installation & Utilisation
@@ -46,7 +46,7 @@ Se déplacer dans le dossier Terraform
 cd terraform/
 terraform init
 terraform apply -var-file="secrets.tfvars"
-
+```
 ### 3. Configuration du Cluster
 ```bash
 Se déplacer dans le dossier Ansible
@@ -54,12 +54,12 @@ cd ../ansible/
 
 Lancer la configuration du vCenter, du vSAN et du réseau
 ansible-playbook -i inventory.yml playbooks/setup-cluster.yml
-
+```
 ### 4. Simulation de Migration
 ```powershell
 Commande type pour migrer une VM entre les deux hôtes
 ./scripts/migrate-vm.ps1 -VMName "Workload-Prod-01" -SourceHost "ESXi-01" -DestHost "ESXi-02"
-
+```
 ---
 
 ## 🎯 Objectifs de Démonstration
@@ -70,4 +70,4 @@ Sécurisation des flux : Isolation réseau via Port Groups (vMotion, vSAN, Manag
 Résilience : Preuve de concept (PoC) sur la migration de VM sans interruption de service.
 
 ---
-Développé Johann GOBALSAMY Passionné par l'automatisation Cloud & l'ingénierie DevOps.
+Développé par Johann GOBALSAMY Passionné par l'automatisation Cloud & l'ingénierie DevOps.
