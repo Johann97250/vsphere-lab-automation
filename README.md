@@ -30,3 +30,44 @@ L'infrastructure est segmentée en plusieurs couches automatisées :
 ├── scripts/            # Scripts PowerCLI pour la migration (Vmotion/Replica)
 ├── docs/               # Schémas réseaux et diagrammes d'architecture
 └── README.md
+
+---
+
+## 🛠️ Installation & Utilisation
+
+### 1. Prérequis
+* Un hyperviseur physique ou VMware Workstation.
+* Accès réseau aux ISO VMware (VCSA, ESXi).
+* Terraform & Ansible installés sur votre machine de contrôle (WSL2 recommandé).
+
+### 2. Déploiement de l'Infrastructure
+```bash
+Se déplacer dans le dossier Terraform
+cd terraform/
+terraform init
+terraform apply -var-file="secrets.tfvars"
+
+### 3. Configuration du Cluster
+```bash
+Se déplacer dans le dossier Ansible
+cd ../ansible/
+
+Lancer la configuration du vCenter, du vSAN et du réseau
+ansible-playbook -i inventory.yml playbooks/setup-cluster.yml
+
+### 4. Simulation de Migration
+```powershell
+Commande type pour migrer une VM entre les deux hôtes
+./scripts/migrate-vm.ps1 -VMName "Workload-Prod-01" -SourceHost "ESXi-01" -DestHost "ESXi-02"
+
+---
+
+## 🎯 Objectifs de Démonstration
+Automatisation Totale : Réduction du temps de déploiement de 4h (manuel) à 15min (automatisé).
+
+Sécurisation des flux : Isolation réseau via Port Groups (vMotion, vSAN, Management).
+
+Résilience : Preuve de concept (PoC) sur la migration de VM sans interruption de service.
+
+---
+Développé Johann GOBALSAMY Passionné par l'automatisation Cloud & l'ingénierie DevOps.
