@@ -30,7 +30,9 @@ L'infrastructure est segmentée en plusieurs couches automatisées :
 ├── scripts/            # Scripts PowerCLI pour la migration (Vmotion/Replica)
 ├── docs/               # Schémas réseaux et diagrammes d'architecture
 └── README.md
+```
 ##De façon plus détaillée
+```text
 .
 ├── ansible
 │   ├── playbooks
