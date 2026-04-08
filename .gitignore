@@ -1,0 +1,14 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+*.tfvars.json
+
+# Ansible
+*.retry
+*.log
+
+# OS & Divers
+.DS_Store
+*.tmp
