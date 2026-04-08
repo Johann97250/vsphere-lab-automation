@@ -30,6 +30,17 @@ L'infrastructure est segmentée en plusieurs couches automatisées :
 ├── scripts/            # Scripts PowerCLI pour la migration (Vmotion/Replica)
 ├── docs/               # Schémas réseaux et diagrammes d'architecture
 └── README.md
+##De façon plus détaillée
+.
+├── ansible
+│   ├── playbooks
+│   └── roles
+│       └── vsphere_config
+│           └── tasks
+├── docs
+├── scripts
+└── terraform
+    └── modules
 ```
 ---
 
