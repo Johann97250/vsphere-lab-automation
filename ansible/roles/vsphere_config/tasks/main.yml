@@ -1,0 +1,33 @@
+---
+# Tâches pour configurer les hôtes ESXi
+- name: Création du vSwitch pour le trafic interne (vMotion/vSAN)
+  community.vmware.vmware_vswitch:
+    hostname: "{{ ansible_host }}"
+    username: "{{ ansible_user }}"
+    password: "{{ ansible_password }}"
+    switch_name: "vSwitch-Internal"
+    nic_name: vmnic1 # On suppose que la 2ème carte réseau est libre
+    validate_certs: no
+  delegate_to: localhost
+
+- name: Ajout du Port Group vMotion
+  community.vmware.vmware_portgroup:
+    hostname: "{{ ansible_host }}"
+    username: "{{ ansible_user }}"
+    password: "{{ ansible_password }}"
+    switch_name: "vSwitch-Internal"
+    portgroup_name: "vMotion-Net"
+    vlan_id: 10
+    validate_certs: no
+  delegate_to: localhost
+
+- name: Ajout du Port Group vSAN
+  community.vmware.vmware_portgroup:
+    hostname: "{{ ansible_host }}"
+    username: "{{ ansible_user }}"
+    password: "{{ ansible_password }}"
+    switch_name: "vSwitch-Internal"
+    portgroup_name: "vSAN-Net"
+    vlan_id: 20
+    validate_certs: no
+  delegate_to: localhost

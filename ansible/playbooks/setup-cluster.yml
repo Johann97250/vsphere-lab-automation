@@ -1,0 +1,6 @@
+---
+- name: Configuration initiale des hôtes ESXi du Lab
+  hosts: esxi_hosts
+  gather_facts: no
+  roles:
+    - vsphere_config
