@@ -3,7 +3,7 @@
 Ce document décrit la configuration nécessaire sur l'hôte Windows pour supporter l'automatisation.
 
 ## 1. Prérequis Matériels
-* **RAM :** 32 Go recommandés (ESXi: 8Go x2 + vCenter: 12Go).
+* **RAM :** 16 Go  (ESXi: 3Go x2 + vCenter: 8Go).
 * **CPU :** Processeur supportant VT-x / AMD-V.
 * **Stockage :** SSD de 256 Go dédié au lab.
 
