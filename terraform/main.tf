@@ -4,7 +4,7 @@ resource "vsphere_virtual_machine" "esxi_nodes" {
   count            = 2
   name             = "ESXi-Host-0${count.index + 1}"
   num_cpus         = 2
-  memory           = 8192 # 8Go de RAM par hôte
+  memory           = 3072 # 3Go de RAM par hôte
   guest_id         = "vmkernel7Guest"
 
   network_interface {
